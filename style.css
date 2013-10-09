@@ -1,0 +1,245 @@
+/* Table Styles */
+
+table.standard, 
+table.stripe {
+  text-align: right;
+  width: 100%;
+}
+
+table.stripe tr.offRow td,
+table.stripe tr.altRow td {
+  background: #f7fafa;
+}
+
+table.standard thead th,
+table.stripe thead th,
+table.standard tbody td, 
+table.stripe tbody td {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+table.stripe thead th,
+table.standard thead th {
+  color: #909090;
+  font-size: 10px;
+  font-style: italic;
+  line-height: 11px;
+  text-align: right;
+}
+
+table.standard thead th {
+  padding: 10px 0px 5px 5px;
+}
+
+table.stripe thead th {
+  padding: 10px 12px 5px 12px;
+}
+
+table.standard th.name {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-style: normal;
+  color: #686868;
+  font-size: 11px;
+  padding-left: 0px;
+}
+
+table.stripe tbody td,
+table.standard tbody td {
+  font-size: 12px;
+  padding: 12px 0px 12px 5px;
+}
+
+table.standard tfoot tr,
+table.stripe tfoot tr {
+  border-bottom: 0px none;
+}
+
+table.standard tfoot td,
+table.stripe tfoot td {
+  color: #999999;
+  font-size: 10px;
+  text-align: left;
+}
+
+
+/* Carousel Arrow Styles */
+
+.carousel {
+  background-color: #ffffff;
+  border: 1px solid #d3d3d3;
+  cursor: pointer;
+  display: inline-block;
+  height: 186px;
+  padding: 1px 1px 1px 1px;
+  width: 17px;
+}
+
+.carousel.disabled { 
+  cursor: default;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=25)";
+  filter: alpha(opacity=25);
+  opacity: 0.25;
+}
+
+.carousel a {
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+}
+
+.carousel.disabled a { 
+  cursor: default;
+}
+
+.carouselPrevious a {
+  background-position: 0px 0px;
+}
+
+.carouselNext a {
+  background-position: 0px -25px;
+}
+
+.carouselArrow {
+  border-style: solid;
+  color: #ffffff;
+  display: inline-block;
+  font-size: 0px;
+  line-height: 0px;
+  width: 0px;
+}
+
+.carousel .carouselArrow {
+  margin: 85px 0px 0px 7px;
+}
+
+.carouselLeftArrow {
+  border-color: transparent #7a7a7a transparent #7a7a7a;
+  border-width: 5px 4px 4px 0px;
+}
+
+.carouselRightArrow {
+  border-color: transparent #7a7a7a transparent #7a7a7a;
+  border-width: 5px 0px 4px 4px;
+}                    
+
+.cssArrow {
+  border-style: solid;
+  color: #ffffff; /* for IE6; match bg color. All others use transparency */
+  display: block;
+  font-size: 0; /* for IE display */
+  height: 0;
+  line-height: 0; /* for IE display */
+  width: 0;
+}
+                     
+.cssUpArrow {
+  border-color: #000000 transparent;
+  border-width: 0px 4px 5px 4px;   
+}
+                     
+.cssDownArrow {
+  border-color: #000000 transparent;
+  border-width: 5px 4px 0px 4px;
+}
+                     
+.cssRightArrow {
+  border-color: transparent #000000;
+  border-width: 4px 0px 4px 5px;
+}
+                     
+.cssLeftArrow {
+  border-color: transparent #000000;
+  border-width: 4px 5px 4px 0px;      
+}
+
+
+/* Table Paginator Plug-In Styles */
+
+.tablePaginator {
+  border-top: 1px solid #d3d3d3;
+}
+
+.tablePaginator .labelTableContainer,
+.tablePaginator .mainTableContainer {
+  float: left;
+  overflow: hidden;
+}
+
+.tablePaginator .nextNavTableContainer {
+  float: left;
+}
+
+.tablePaginator .labelTableContainer thead th,
+.tablePaginator .nextNavTableContainer thead th {
+  padding: 0px;
+}
+
+.tablePaginator .nextNavTableContainer thead th.stationaryLastColumn {
+  text-align: right;
+  padding-bottom: 5px;
+}
+
+.tablePaginator .nextNavTableContainer tbody td { 
+  text-align: right;
+}
+
+.tablePaginator .labelTableContainer .label {
+  background: #eef4f6; /* Old browsers */
+  background-image: linear-gradient(top, #fcfdfe 25%, #eef4f6 65%);
+  background-image: -o-linear-gradient(top, #fcfdfe 25%, #eef4f6 65%);
+  background-image: -moz-linear-gradient(top, #fcfdfe 25%, #eef4f6 65%);
+  background-image: -webkit-linear-gradient(top, #fcfdfe 25%, #eef4f6 65%);
+  background-image: -ms-linear-gradient(top, #fcfdfe 25%, #eef4f6 65%);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.25, #fcfdfe), color-stop(0.65, #eef4f6));
+  float: left;
+  height: 24px;
+  padding: 20px 0px 0px 13px;
+  text-align: left;
+}
+
+.tablePaginator .carousel { 
+  border-bottom: 0px none;
+  border-top: 0px none;
+  float: left;
+  height: 42px;
+  text-align: left;
+}
+
+.tablePaginator .carousel .carouselArrow { 
+  margin: 18px 0px 0px 7px;
+}
+
+.tablePaginator tr {
+  height: 45px;
+}
+
+.tablePaginator .labelTableContainer tbody td { 
+  font-weight: bold;
+  padding-left: 13px;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.tablePaginator .mainTableContainer { 
+  /* Position relative is required on the table container so that in IE7 the table doesn't overflow outside its parent */
+  position: relative;
+}
+
+.tablePaginator .mainTableContainer table { 
+  -moz-transition: margin-left 0.5s;
+  -webkit-transition: margin-left 0.5s;
+  -o-transition: margin-left 0.5s;
+  transition: margin-left 0.5s;
+  /* Position relative is required on the table in order to get the left position of the <th> elements */
+  position: relative;
+} 
+
+.isie7 .tablePaginator .mainTableContainer thead th { 
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+
+.tablePaginator .mainTableContainer tbody td { 
+  white-space: nowrap;
+}
