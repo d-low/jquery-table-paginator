@@ -362,20 +362,17 @@
 		var lastThWidth = $thead.find("th:last").outerWidth();
 
 		// 
-		// We will be unable to obtain the width of the first or last table header cell after the
-		// original table element is no longer displayed.  In this case, we obtain the original 
-		// widths that we saved to the table paginator data, and get the width of the first table 
-		// header cell from them.
+		// We use the original table header cell widths if they're avialable since 
+		// we may not get accurate results if we query their widths in response to
+		// a resize event after the original table has been hidden.
 		//
 	
-		if (firstThWidth == 0 || lastThWidth == 0) {
-			if ($tablePaginator) { 
-				var ogWidths = $tablePaginator.data("widths");
-			
-				if (ogWidths) { 
-					firstThWidth = ogWidths.firstTh;
-					lastThWidth = ogWidths.lastTh;
-				}
+		if ($tablePaginator) { 
+			var ogWidths = $tablePaginator.data("widths");
+		
+			if (ogWidths) { 
+				firstThWidth = ogWidths.firstTh;
+				lastThWidth = ogWidths.lastTh;
 			}
 		}
 
@@ -399,7 +396,7 @@
 		var labelTableContainerWidth = firstThWidth + 21; // +21 for the previous carousel button
 		var mainTableContainerWidth = tablePaginatorWidth - labelTableContainerWidth - nextNavTableContainerWidth;
 		var tableWidth = $table.outerWidth() - firstThWidth - (options && options.lastColumnStationary ? lastThWidth : 0);
-		
+	
 		var widths = {
 			tablePaginator: tablePaginatorWidth,
 			firstTh: firstThWidth,
@@ -731,7 +728,6 @@
 	var windowResizeTimeout = null;
 
 	var window_resize = function(e) {
-
 		window.clearTimeout(windowResizeTimeout);
 
 		var fTimeout = function() { 
