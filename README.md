@@ -11,4 +11,4 @@ Usage:
 Example:
 --------
 
-See index.html for an example of using the table paginator plug-in resizes itself when the window is resized.
+See index.html for an example of using the table paginator plug-in where the plug-in is resized when the window is resized.
