@@ -69,7 +69,7 @@
 			if (options.resizeWhenWindowResized == true) {
 				$(window)
 					.unbind("resize.tablepaginator")
-					.bind("resize.tablepaginator", {$el: this}, function(e) { window_resize(e); });
+					.bind("resize.tablepaginator", {$el: this}, window_resize);
 			}
 
 			//
@@ -728,17 +728,17 @@
 		});
 	};
 
+	var windowResizeTimeout = null;
 
 	var window_resize = function(e) {
 
-		var timeout = null;
+		window.clearTimeout(windowResizeTimeout);
 
 		var fTimeout = function() { 
-			window.clearTimeout(timeout);
 			resize(null, e.data.$el);	
 		};
 
-		timeout = window.setTimeout(fTimeout, 100);
+		windowResizeTimeout = window.setTimeout(fTimeout, 100);
 	};
 
 
