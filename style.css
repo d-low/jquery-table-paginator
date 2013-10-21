@@ -1,4 +1,85 @@
+/* Reset and Common Styles */
+
+body,div,p,table,caption,tbody,tfoot,thead,tr,th,td,h1,h2,h3,h4,h5,h6,
+ul,ol,li,dl,dt,dd,pre,form,fieldset,legend,input,textarea,blockquote,iframe {
+  margin:0;
+  padding:0;
+}
+
+table {
+  border-collapse:collapse;
+  border-spacing:0;
+}
+
+caption,th {
+  text-align:left;
+}
+
+fieldset,img,abbr,acronym { 
+  border:0;
+}
+
+address,caption,cite,code,dfn,em,th,var {
+  font-style:normal;
+  font-weight:normal;
+}
+
+strong {
+  font-weight:bold;
+}
+
+ol,ul {
+  list-style:none;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-weight:normal;
+}
+
+.hasLayout, .contain {
+  *zoom:1;
+}
+
+.contain:after {
+  content:".";
+  display:block;
+  height:0;
+  clear:both;
+  visibility:hidden;
+}
+
+.capitalize {
+  text-transform:capitalize;
+}
+
+.upperCase {
+  text-transform:uppercase;
+}
+
+.lowerCase {
+  text-transform:lowercase;
+}
+
+.floatLeft {
+  float:left;
+  _display:inline;
+}
+
+.floatRight {
+  float:right;
+  _display:inline;
+}
+
+.none {
+  display:none;
+}
+
 /* Table Styles */
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
 
 table.standard, 
 table.stripe {
@@ -25,6 +106,10 @@ table.standard thead th {
   font-style: italic;
   line-height: 11px;
   text-align: right;
+}
+
+table thead th {
+  white-space: nowrap;
 }
 
 table.standard thead th {
@@ -185,15 +270,9 @@ table.stripe tfoot td {
 }
 
 .tablePaginator .labelTableContainer .label {
-  background: #eef4f6; /* Old browsers */
-  background-image: linear-gradient(top, #fcfdfe 25%, #eef4f6 65%);
-  background-image: -o-linear-gradient(top, #fcfdfe 25%, #eef4f6 65%);
-  background-image: -moz-linear-gradient(top, #fcfdfe 25%, #eef4f6 65%);
-  background-image: -webkit-linear-gradient(top, #fcfdfe 25%, #eef4f6 65%);
-  background-image: -ms-linear-gradient(top, #fcfdfe 25%, #eef4f6 65%);
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.25, #fcfdfe), color-stop(0.65, #eef4f6));
   float: left;
   height: 24px;
+  overflow-x: hidden;
   padding: 20px 0px 0px 13px;
   text-align: left;
 }

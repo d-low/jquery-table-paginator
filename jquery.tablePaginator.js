@@ -157,14 +157,14 @@
     			else if (this.childNodes.length == 1 && this.childNodes[0].nodeType == 3) { // td contains a single text node
     				label = $(this).text();
     				labelTableTrElems.push(
-	    				'<tr><td title="' + label + '">' + WSOD.ellipsize(label, 35) + '</td></tr>'
+	    				'<tr><td title="' + label + '">' + ellipsize(label, 35) + '</td></tr>'
         			);
     			}
 
     			// td contains a single anchor node
     			else if ($children.length == 1 && $first.is('a')) {
     				var title = $(this).attr("title");
-    				label = WSOD.ellipsize($first.text(), 35);
+    				label = ellipsize($first.text(), 35);
 
 					// If the anchor already contains a title leave it be!
 					if (! $first.attr("title")) { 
@@ -758,6 +758,55 @@
 		}, options);
 	};
 
+	var ellipsize = function(text, length, _bPreserveWords) {
+
+		_bPreserveWords = (typeof _bPreserveWords == "undefined") ? 'true' : _bPreserveWords;
+
+		try {
+
+			if (String(text).length > length) {
+
+				if (!_bPreserveWords) {
+
+					// if _bPreserveWords is set to false then trim the text to the precise length given.
+
+					text = text.substring(0, length) + "...";
+				}
+				else {
+
+					// Else trim the text to the nearest word length.
+
+					bEllipsized = false;
+
+					// Find the index of the first white space character less than length
+
+					for (var i = text.length - 1; i > 0; i--) {
+
+						if (text.charAt(i) == " " && i <= length) {
+
+							// And then truncate the string at that character and add some elipses
+
+							text = text.substring(0, i) + "...";
+							bEllipsized = true;
+
+							break;
+						}
+					}
+
+					// If we couldn't find a white space character, just truncate the string.
+
+					if (bEllipsized == false) {
+						text = text.substring(0, length) + "...";
+					}
+				}
+			}	
+		}
+		catch (exp) {
+			// Do nothing, unable to ellipsize string...
+		}
+
+		return text; 
+	};
 
 	/**
 	 * @description Associative array of public methods exposed by the plug-in.
